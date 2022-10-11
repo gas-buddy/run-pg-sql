@@ -1,0 +1,48 @@
+{
+  "name": "run-pg-sql",
+  "version": "1.0.0",
+  "description": "Run a SQL file using pg-promise (npx friendly)",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
+  "scripts": {
+    "clean": "yarn dlx rimraf ./build",
+    "test": "jest",
+    "lint": "eslint src",
+    "build": "tsc -p tsconfig.build.json",
+    "prepare": "husky install"
+  },
+  "bin": "./build/cli",
+  "engines": {
+    "node": ">18.0.0"
+  },
+  "author": "GasBuddy Developers <developers@gasbuddy.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gas-buddy/run-pg-sql.git"
+  },
+  "keywords": [
+    "typescript",
+    "gasbuddy"
+  ],
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": "yarn eslint --cache --fix"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.1.1",
+    "@types/minimist": "^1.2.2",
+    "@types/node": "^18.8.4",
+    "eslint": "^8.2.0",
+    "eslint-config-gasbuddy": "^7.0.2",
+    "husky": "^8.0.1",
+    "jest": "^29.1.2",
+    "lint-staged": "^13.0.3",
+    "ts-jest": "^29.0.3",
+    "typescript": "^4.8.4"
+  },
+  "packageManager": "yarn@3.2.4",
+  "dependencies": {
+    "minimist": "^1.2.7",
+    "pg-promise": "^10.12.0"
+  }
+}
