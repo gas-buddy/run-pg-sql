@@ -1,4 +1,4 @@
-import pgp from 'pg-promise';
+import { Client } from 'pg';
 
 export default async function runPgSql(
   sql: string,
@@ -9,11 +9,11 @@ export default async function runPgSql(
     password: string;
   },
 ) {
-  const client = pgp();
-  const connection = client(options);
+  const connection = new Client(options);
+  await connection.connect();
   try {
-    await connection.none(sql);
+    await connection.query(sql);
   } finally {
-    client.end();
+    connection.end();
   }
 }

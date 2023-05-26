@@ -5,4 +5,4 @@ run-pg-sql
 
 [![npm version](https://badge.fury.io/js/@gasbuddy%2Frun-pg-sql.svg)](https://badge.fury.io/js/@gasbuddy%2Frun-pg-sql)
 
-Run a SQL file using pg-promise (npx friendly)
+Run a SQL file using pg (npx friendly with minimal dependencies)
