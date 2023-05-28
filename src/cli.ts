@@ -6,9 +6,10 @@ import assert from 'assert';
 import runPgSql from './index';
 
 const argv = minimist(process.argv.slice(2), {
-  boolean: ['quiet'],
+  boolean: ['quiet', 'evaluate'],
   alias: {
     q: 'quiet',
+    e: 'evaluate',
   },
 });
 
@@ -19,7 +20,7 @@ assert(argv.user || PGUSER, 'Must have PGUSER environment variable');
 assert(argv.password || PGPASSWORD, 'Must have PGPASSWORD environment variable');
 
 const database = argv._[0];
-const sql = fs.readFileSync(argv._[1], 'utf8');
+const sql = argv.evaluate ? argv._[1] : fs.readFileSync(argv._[1], 'utf8');
 
 if (!argv.quiet) {
   console.log(sql);

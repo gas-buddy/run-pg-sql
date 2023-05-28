@@ -1,6 +1,6 @@
 {
   "name": "run-pg-sql",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Run a SQL file using pg-promise (npx friendly)",
   "main": "build/index.js",
   "types": "build/index.d.ts",
